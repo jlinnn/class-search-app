@@ -19,7 +19,7 @@ public class Main {
 
   private static void search(String query) {
     final String BASE_URL = "https://sis.jhu.edu/api/classes";
-    final String KEY = "YOUR_KEY_GOES_HERE";
+    final String KEY = System.getenv("JHU_API_KEY");
 
     String endpoint = BASE_URL + "/codes/schools?Key=" + KEY;
     HttpResponse<JsonNode> jsonResponse = Unirest.get(endpoint).asJson();
